@@ -1,0 +1,890 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, black, rgb(158, 223, 251), black);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ! resume form styling */
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+fieldset {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(48, 94, 97);
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
+  outline: none;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* ! focus effect */
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid rgb(0, 7, 7);
+  
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  appearance: none;
+}
+
+input[type="file"] {
+  padding: 3px;
+}
+
+.time {
+  outline: none;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.time:focus {
+  border: 1px solid rgb(132, 215, 228);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+::placeholder {
+  font-size: 15px;
+}
+
+/* ! toggle skills functionality */
+
+#toggle-skills-btn {
+  width: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: rgb(32, 23, 32);
+  border-radius: 8px;
+  outline: none;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+}
+
+#toggle-skills-btn:hover {
+  background-color: rgb(55, 149, 158);
+  transition: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.selected-skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-box {
+  background-color: rgb(65, 170, 196);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  color: white;
+  margin: 5px;
+  white-space: nowrap;
+}
+
+.skill-box button {
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* ! resume preview stylng */
+
+.container {
+  position: relative;
+  padding: 20px;
+}
+
+#resume-display {
+  position: relative;
+  height: auto;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  border: 1px solid #ccc;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.resume-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column {
+  width: 28%;
+  padding: 20px;
+  height: auto;
+  background-color: rgb(81, 171, 201);
+  border-right: 1px solid #ccc;
+  color: white;
+}
+
+.right-column {
+  width: 60%;
+  padding: 20px;
+  height: auto;
+}
+
+/* ! generate resume button */
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 30px;
+  background-color: rgb(32, 23, 32);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(77, 178, 214);
+  transition: 0.3s ease;
+}
+
+#skillList {
+  padding: 10px;
+}
+
+.skill {
+  display: inline-block;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ! project section */
+
+#projects {
+  padding: 0px 20px;
+  margin-top: 0px;
+}
+
+
+#projects h3 {
+  
+  font-size: 24px;
+  color:  rgb(77, 178, 214);
+  border-bottom: 2px solid  rgb(77, 178, 214);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.project-item {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 3px solid  rgb(77, 178, 214);
+}
+
+.project-item h4 {
+  font-size: 18px;
+  color:  rgb(77, 178, 214);
+  margin: 0;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.project-date {
+  font-size: 14px;
+  color: gray;
+  margin-top: 2px;
+  display: block;
+}
+
+.project-item p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/*! profile image */
+.profile-photo img {
+  width: 95%;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 4px solid white;
+}
+
+.profile-photo {
+  margin-top: 40px;
+}
+
+.contact h3,
+.education h3,
+.section h3 {
+  font-size: 24px;
+  border-bottom: 1px solid #f5ebeb;
+  margin-top: 50px;
+  padding-bottom: 5px;
+}
+
+.education {
+  text-transform: capitalize;
+}
+
+.pro-para {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color:  rgb(77, 178, 214);
+}
+
+.section1 {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 50px;
+}
+
+.section1 h3 {
+  font-size: 24px;
+  color: rgb(77, 178, 214);
+  border-bottom: 2px solid  rgb(77, 178, 214);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.section1 div {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 3px solid  rgb(77, 178, 214);
+}
+
+.section1 div h4 {
+  font-size: 18px;
+  color: rgb(63, 12, 50);
+  margin-top: 30px;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#name {
+  color:  rgb(77, 178, 214);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 8px;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#jobRole {
+  font-size: 19px;
+  color: black;
+  text-align: center;
+  padding-bottom: 40px;
+  text-transform: capitalize;
+}
+
+#company {
+  font-size: 15px;
+  font-style: italic;
+  color: #555;
+  display: block;
+  text-transform: capitalize;
+}
+
+#stime,
+#etime {
+  font-size: 14px;
+  color: gray;
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+#syear,
+#eyear {
+  display: inline-flex;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+
+#degrees {
+  margin-top: 0;
+}
+
+.section h4 {
+  font-weight: 600;
+  color: black;
+  margin-top: 30px;
+}
+
+#workExp {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.contact p,
+.education p {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+button[type="button"] {
+  width: 180px;
+  padding: 13px;
+  margin-top: 10px;
+  background-color: rgb(32, 23, 32);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: none;
+}
+
+button[type="button"]:hover {
+  background-color:  rgb(77, 178, 214);
+  transition: background-color 0.3s ease;
+}
+
+
+/*! for responsive design */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 80%;
+    border-radius: 5px;
+    padding: 0;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="file"],
+  select,
+  textarea,
+  .time {
+    font-size: 0.9rem;
+    padding: 6px;
+    margin-top: 4px;
+    width: 100%;
+  }
+
+  fieldset {
+    margin-top: 20px;
+  }
+
+  ::placeholder {
+    font-size: 12px;
+  }
+
+  legend {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 13px;
+    padding: 10px;
+    width: 85%;
+    margin-left: 5%;
+  }
+
+  #wordCounter {
+    font-size: 14px;
+  }
+
+  #wordCounter2 {
+    font-size: 14px;
+  }
+
+  #wordCounter3 {
+    font-size: 14px;
+  }
+
+  #wordCounter4 {
+    font-size: 14px;
+  }
+
+  #toggle-skills-btn {
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .pro-para {
+    font-size: 20px;
+    margin: 15px 0 15px 0;
+  }
+
+  .skill-box {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  .left-column {
+    width: 30%;
+    padding: 10px;
+  }
+
+  .right-column {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  #resume-form {
+    padding: 0;
+    margin: 0;
+  }
+
+  #resume-display {
+    padding: 12px;
+    margin: 0;
+  }
+
+  .profile-photo img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .contact h3,
+  .education h3,
+  .section h3 {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+
+  .contact p,
+  .education p {
+    font-size: 11px;
+    white-space: wrap;
+    word-wrap: break-word;
+  }
+
+  .skill {
+    padding: 7px 10px;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+
+  #name {
+    font-size: 20px;
+    margin-top: 50px;
+    padding-bottom: 6px;
+    letter-spacing: 2px;
+  }
+
+  #jobRole {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section1 {
+    padding: 0 0px;
+    margin: 0;
+  }
+
+  .section1 h3 {
+    font-size: 18px;
+    padding-bottom: 4px;
+    margin-bottom: 0px;
+    border-width: 1px;
+    font-weight: 500;
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .section h4 {
+    margin-top: 30px;
+  }
+
+  .section1 div h4 {
+    font-size: 14px;
+  }
+
+  #company {
+    font-size: 12px;
+  }
+
+  #stime,
+  #etime {
+    font-size: 12px;
+  }
+
+  #workExp {
+    font-size: 11px;
+  }
+
+  #projects {
+    padding: 0 0px;
+  }
+
+  #projects h3 {
+    font-size: 18px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    border-width: 1px;
+    font-weight: 500;
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .project-item h4 {
+    font-size: 14px;
+  }
+
+  .project-item p {
+    font-size: 11px;
+  }
+
+  .project-item {
+    border-left-width: 2px;
+  }
+
+  .section1 div {
+    border-left-width: 2px;
+  }
+
+  #shareButton,
+  #downloadButton {
+    font-size: 12px;
+    padding: 12px;
+    width: 130px;
+    margin-left: 5%;
+  }
+
+  #downloadButton {
+    margin-bottom: 5%;
+  }
+}
+
+/* ! for mobile responsiveness */
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0px;
+  }
+
+  #resume-form {
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="file"],
+  select,
+  textarea,
+  .time {
+    font-size: 0.9rem;
+    padding: 6px;
+    margin-top: 4px;
+    width: 100%;
+  }
+
+  fieldset {
+    margin-top: 20px;
+  }
+
+  ::placeholder {
+    font-size: 12px;
+  }
+
+  legend {
+    font-size: 15px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  button[type="submit"] {
+    font-size: 11px;
+    padding: 10px;
+    width: 85%;
+    margin-left: 5%;
+  }
+
+  #wordCounter {
+    font-size: 14px;
+  }
+
+  #wordCounter2 {
+    font-size: 14px;
+  }
+
+  #wordCounter3 {
+    font-size: 14px;
+  }
+
+  #wordCounter4 {
+    font-size: 14px;
+  }
+
+  #toggle-skills-btn {
+    font-size: 11px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .pro-para {
+    font-size: 17px;
+    margin: 15px 0 15px 0;
+  }
+
+  #shareButton,
+  #downloadButton {
+    font-size: 9px;
+    padding: 8px;
+    width: 100px;
+    margin-left: 5%;
+  }
+
+  #downloadButton {
+    margin-bottom: 5%;
+  }
+
+  .skill-box {
+    font-size: 0.7rem;
+  }
+
+  .left-column {
+    width: 31%;
+  }
+
+  .right-column {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  #resume-display {
+    padding: 5px;
+  }
+
+  .profile-photo img {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    border-width: 3px;
+  }
+
+  .contact h3,
+  .education h3,
+  .section h3 {
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .contact p,
+  .education p {
+    font-size: 8px;
+    white-space: wrap;
+    word-wrap: break-word;
+  }
+
+  .skill {
+    padding: 5px;
+    white-space: wrap;
+    width: auto;
+    font-size: 8px;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  #skillList {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  #name {
+    font-size: 14px;
+    margin-top: 40px;
+    padding-bottom: 6px;
+    letter-spacing: 1.5px;
+  }
+
+  #jobRole {
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section1 {
+    padding: 0 7px;
+    margin: 0;
+  }
+
+  .section1 h3 {
+    font-size: 13px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    border-width: 1px;
+    font-weight: 500;
+    margin-top: 27px;
+    padding: 0;
+  }
+
+  .section h4 {
+    margin-top: 20px;
+  }
+
+  .section1 div h4 {
+    font-size: 11px;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  #company {
+    font-size: 10px;
+  }
+
+  #stime,
+  #etime {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #workExp {
+    font-size: 9px;
+  }
+
+  #projects {
+    padding: 0 7px;
+  }
+
+  #projects h3 {
+    font-size: 13px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    border-width: 1px;
+    font-weight: 500;
+    margin-top: 27px;
+    padding: 0;
+  }
+
+  .project-item h4 {
+    font-size: 11px;
+  }
+
+  .project-item p {
+    font-size: 9px;
+  }
+
+  .project-item {
+    border-left-width: 2px;
+  }
+
+  .section1 div {
+    border-left-width: 2px;
+  }
+}
+
+
+/* ! ----------------------------------------- THE END ------------------------------------------------ */

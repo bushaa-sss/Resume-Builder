@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!--! resume form -->
+
+        <div id="resume-form">
+            <form id="resumeForm">
+                <!-- ! personal information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="nameInput" required placeholder="e.g., Busra Saleh" /><br />
+
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phoneInput" required placeholder="e.g., +92 0331-1319624" /><br />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="emailInput" required placeholder="e.g., bushra@example.com" /><br />
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="addressInput" required
+                        placeholder="e.g., 123 Main St, City, Country" /><br />
+
+                    <label for="jobRole">Job Role:</label>
+                    <select name="job-role" id="job-role" required>
+                        <option value="">Select Job Role</option>
+                        <option value="Software Engineer">Software Engineer</option>
+                        <option value="Web Developer">Web Developer</option>
+                        <option value="Data Analyst">Data Analyst</option>
+                        <option value="Product Manager">Product Manager</option>
+                        <option value="Graphic Designer">Graphic Designer</option>
+                        <option value="Digital Marketer">Digital Marketer</option>
+                        <option value="Content Writer">Content Writer</option>
+                        <option value="UI/UX Designer">UI/UX Designer</option>
+                        <option value="Project Manager">Project Manager</option>
+                        <option value="Network Engineer">Network Engineer</option>
+                        <option value="System Administrator">System Administrator</option>
+                        <option value="Business Analyst">Business Analyst</option>
+                        <option value="QA Engineer">QA Engineer</option>
+                        <option value="Database Administrator">
+                            Database Administrator
+                        </option>
+                        <option value="HR Manager">HR Manager</option>
+                        <option value="Customer Support">Customer Support</option>
+                        <option value="Accountant">Accountant</option>
+                        <option value="Financial Analyst">Financial Analyst</option>
+                        <option value="SEO Specialist">SEO Specialist</option>
+                        <option value="Sales Manager">Sales Manager</option>
+                    </select>
+
+                    <!--! profile photo -->
+
+                    <label for="profileImage">Profile Photo:</label>
+                    <input type="file" id="profileImageInput" accept="image/*" required /><br />
+                </fieldset>
+
+                <!-- ! education -->
+                <fieldset>
+                    <legend>Education</legend>
+
+                    <label for="school">School/College:</label>
+                    <input type="text" id="schoolInput" required placeholder="e.g., ABC School/College" /><br />
+
+                    <label for="degree">Degree:</label>
+                    <select name="degree" id="degree" required>
+                        <option value="">Select Degree</option>
+                        <option value="High School Diploma">High School Diploma</option>
+                        <option value="Associate's Degree">Associate's Degree</option>
+                        <option value="Bachelor of Arts (BA)">
+                            Bachelor of Arts (BA)
+                        </option>
+                        <option value="Bachelor of Science (BSc)">
+                            Bachelor of Science (BSc)
+                        </option>
+                        <option value="Bachelor of Engineering (BEng)">
+                            Bachelor of Engineering (BEng)
+                        </option>
+                        <option value="Master of Arts (MA)">Master of Arts (MA)</option>
+                        <option value="Master of Science (MSc)">
+                            Master of Science (MSc)
+                        </option>
+                        <option value="Master of Business Administration (MBA)">
+                            Master of Business Administration (MBA)
+                        </option>
+                        <option value="Doctor of Philosophy (PhD)">
+                            Doctor of Philosophy (PhD)
+                        </option>
+                        <option value="Doctor of Medicine (MD)">
+                            Doctor of Medicine (MD)
+                        </option>
+                        <option value="Juris Doctor (JD)">Juris Doctor (JD)</option>
+                        <option value="Diploma">Diploma</option>
+                    </select>
+
+                    <p>
+                        <label for="syear">Start Year:</label>
+                        <input class="time" name="start-year" id="start-yearInput" required
+                            placeholder="eg., Jan 2021" />
+                        <label for="eyear">End Year:</label>
+                        <input class="time" name="end-year" id="end-yearInput" required placeholder="eg., Mar 2023" />
+                    </p>
+                </fieldset>
+
+                <!-- ! Skills -->
+
+                <fieldset>
+                    <legend>Skills</legend>
+
+                    <label for="skills">Skills</label>
+                    <select name="selectSkills" id="skills">
+                        <option value="">Select Multiple Skills</option>
+                        <option value="Communication">Communication</option>
+                        <option value="Teamwork">Teamwork</option>
+                        <option value="Leadership">Leadership</option>
+                        <option value="Problem Solving">Problem Solving</option>
+                        <option value="Time Management">Time Management</option>
+                        <option value="Project Management">Project Management</option>
+                        <option value="Technical Skills">Technical Skills</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Data Analysis">Data Analysis</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Customer Service">Customer Service</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Writing">Writing</option>
+                        <option value="Presentation Skills">Presentation Skills</option>
+                        <option value="Adaptability">Adaptability</option>
+                        <option value="Critical Thinking">Critical Thinking</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Foreign Languages">Foreign Languages</option>
+                        <option value="Negotiation">Negotiation</option>
+                        <option value="Creativity">Creativity</option>
+                        <option value="Attention to Detail">Attention to Detail</option>
+                        <option value="Emotional Intelligence">
+                            Emotional Intelligence
+                        </option>
+                    </select>
+
+                    <div class="skills-container" id="selectedSkillsContainer"></div>
+
+                    <!-- ! skill toggle button -->
+
+                    <button id="toggle-skills-btn" onclick="toggleSkills()">
+                        Hide Skills
+                    </button>
+                </fieldset>
+
+                <!-- ! experience -->
+
+                <fieldset>
+                    <legend>Experience</legend>
+
+                    <label for="company">Company Name:</label>
+                    <input type="text" name="company" id="companyInput" required placeholder="e.g., XYZ Corporation" />
+                    <label for="stime">Start Year:</label>
+                    <input class="time" name="start-time" id="start-timeInput" required placeholder="eg., Jan 2021" />
+                    <label for="etime">End Year:</label>
+                    <input class="time" name="end-time" id="end-timeInput" required placeholder="eg., Mar 2023" />
+                    <label for="Peviousjob">Previous Job:</label>
+                    <input type="text" name="Peviousjob" id="PeviousjobtInput" required
+                        placeholder="e.g., Software Engineer" />
+                    <label for="workExp">Work Experience:</label>
+                    <textarea name="experience" id="experienceInput" cols="60" rows="10"
+                        placeholder="Briefly describe your role and responsibilities." required></textarea>
+                    <!-- ! word counter -->
+                    <p id="wordLimitWarning" style="color: red; display: none">
+                        Word limit exceeded! Please keep it under 40 words.
+                    </p>
+                    <div id="wordCounter">0/40</div>
+                </fieldset>
+
+                <!-- ! projects -->
+                <fieldset>
+                    <legend>Projects</legend>
+                    <h1 class="pro-para">Project 1</h1>
+                    <label for="project">Project Name:</label>
+                    <input type="text" name="project" id="projectInput" required
+                        placeholder="e.g., XYZ Management System" />
+                    <label for="workExp">Project Description:</label>
+                    <textarea name="projectText" id="projecttextInput" cols="60" rows="10"
+                        placeholder="Provide a short overview of the project's goals." required></textarea>
+                    <!-- ! word counter -->
+                    <p id="wordLimitWarning2" style="color: red; display: none">
+                        Word limit exceeded! Please keep it under 40 words.
+                    </p>
+                    <div id="wordCounter2">0/40</div>
+
+
+                    <h1 class="pro-para">Project 2</h1>
+                    <label for="project">Project Name:</label>
+                    <input type="text" name="project" id="projectInput2" required
+                        placeholder="e.g., XYZ Management System" />
+                    <label for="workExp">Project Description:</label>
+                    <textarea name="projectText" id="projecttextInput2" cols="60" rows="10"
+                        placeholder="Provide a short overview of the project's goals." required></textarea>
+                    <!-- ! word counter -->
+                    <p id="wordLimitWarning3" style="color: red; display: none">
+                        Word limit exceeded! Please keep it under 40 words.
+                    </p>
+                    <div id="wordCounter3">0/40</div>
+
+                    <h1 class="pro-para">Project 3</h1>
+                    <label for="project">Project Name:</label>
+                    <input type="text" name="project" id="projectInput3" required
+                        placeholder="e.g., XYZ Management System" />
+                    <label for="workExp">Project Description:</label>
+                    <textarea name="projectText" id="projecttextInput3" cols="60" rows="10"
+                        placeholder="Provide a short overview of the project's goals." required></textarea>
+                    <!-- ! word counter -->
+                    <p id="wordLimitWarning4" style="color: red; display: none">
+                        Word limit exceeded! Please keep it under 40 words.
+                    </p>
+                    <div id="wordCounter4">0/40</div>
+                </fieldset>
+
+                <!-- ! generate resume button -->
+                <button type="submit">Generate Resume</button>
+            </form>
+        </div>
+
+        <!--!  resume preview -->
+        <div id="resume-display" class="resume" style="display: none">
+            <div class="resume-content">
+                <!--! left column -->
+
+                <div class="left-column">
+                    <div class="profile-photo">
+                        <img src="profile-placeholder.png" alt="Profile Photo" id="profile-image" />
+                    </div>
+                    <!-- ! contact -->
+
+                    <div class="contact">
+                        <h3>CONTACT</h3>
+                        <p id="address"></p>
+                        <p id="phone"></p>
+                        <p id="email"></p>
+                    </div>
+                    <!-- ! education -->
+
+                    <div class="education">
+                        <h3>EDUCATION</h3>
+                        <p id="school"></p>
+                        <p id="syear"></p>
+                        -
+                        <p id="eyear"></p>
+                        <p id="degrees"></p>
+                    </div>
+
+                    <!-- ! skills -->
+                    <div class="section" id="skilllistsec">
+                        <h3>SKILLS</h3>
+                        <div id="skillList"></div>
+                    </div>
+                </div>
+
+                <!--! right column -->
+
+                <div class="right-column">
+                    <h1 id="name"></h1>
+                    <h2 id="jobRole"></h2>
+
+                    <!-- ! work experience -->
+                    <div class="section1">
+                        <h3>WORK EXPERIENCE</h3>
+
+                        <div>
+                            <h4 id="Peviousjob"></h4>
+                            <h2 id="company"></h2>
+                            <p id="stime"></p> - <p id="etime"></p>
+                            <p id="workExp"></p>
+                        </div>
+                    </div>
+
+                    <!-- ! project section -->
+                    <div class="section" id="projects">
+                        <h3>PROJECTS</h3>
+                        <div class="project-item">
+                            <h4 id="projName"></h4>
+                            <p id="projWork"></p>
+                        </div>
+                        <div class="project-item">
+                            <h4 id="projName2"></h4>
+                            <p id="projWork2"></p>
+                        </div>
+                        <div class="project-item">
+                            <h4 id="projName3"></h4>
+                            <p id="projWork3"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ! share and download buttons -->
+        <button id="shareButton" type="button">Share Resume</button>
+        <button id="downloadButton" type="button">Download Resume</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+
+<!-- ! ----------------------------------------- THE END ------------------------------------------------  -->
